@@ -45,32 +45,4 @@ public class APITestBDD {
                 .then()
                 .statusCode(201);
     }
-
-    @Test
-    public void putTest() {
-
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("title", "JavaDeveloper");
-        jsonObject.put("author", "Shailesh");
-        RestAssured.given()
-                .header("Content-Type", "application/json")
-                .body(jsonObject.toJSONString())
-                .when()
-                .put("http://localhost:3000/posts/12")
-                .then()
-                .statusCode(200);
-    }
-
-    @Test
-    public void deleteTest() {
-
-        JSONObject jsonObject = new JSONObject();
-        RestAssured.given()
-                .header("Content-Type", "application/json")
-                .body(jsonObject.toJSONString())
-                .when()
-                .delete("http://localhost:3000/posts/11")
-                .then()
-                .statusCode(200);
-    }
 }
